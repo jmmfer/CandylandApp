@@ -1,0 +1,46 @@
+.delipick {
+    margin: 15px;
+    text-align: center;
+    height: 70px;
+    width:200px; 
+    overflow:hidden; 
+    /* margin-top: 15px; */
+    margin-right:-5px;
+    display:inline-block; 
+    
+   
+}
+
+.delipick img {
+    width: 200px;
+    height: 200px;
+    margin: -65px 0 0; 
+    
+}
+
+.aqui{
+    text-align: center;
+    margin: 20px;
+    color: black;
+}
+.body {
+    margin-top: 20px;
+   
+}
+.container{
+    position: relative;
+    right: -12rem;
+}
+
+#metop{
+    position: relative;
+    right: -6em;
+    height: 100%;
+    width: 60%;
+}
+
+#pag{
+    position: relative;
+    right: -7.5em;
+
+}

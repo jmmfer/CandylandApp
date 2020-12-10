@@ -1,0 +1,99 @@
+<div class= "delipick">
+    <button type="button"><img src="assets/img/delivery.png" alt="delivery"></button>
+    
+</div>
+<div class= "delipick">
+    
+    <button routerLink='/pickup' type="button"><img src="assets/img/pickup.png" id= "pickup" alt= "pick up"></button>
+</div>
+
+
+
+<form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" >
+      </div>
+      <div class="form-group col-md-6">
+        <label for="apellido">Apellido</label>
+        <input type="text" class="form-control" id="apellido" >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Dirección</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="Calle, Avenida">
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Dirección 2</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Apt, Suite, Building (Opcional)">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">Ciudad</label>
+        <input type="text" class="form-control" id="inputCity">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Estado</label>
+        <select id="inputState" class="form-control">
+          <option selected>Selecciona</option>
+          <option>Distrito Capital</option>
+          <option>Amazonas</option>
+          <option>Anzoátegui</option>
+          <option>Apure</option>
+          <option>Aragua</option>
+          <option>Barinas</option>
+          <option>Bolívar</option>
+          <option>Carabobo</option>
+          <option>Cojedes</option>
+          <option>Delta Amacuro</option>
+          <option>Falcón</option>
+          <option>Guárico</option>
+          <option>Lara</option>
+          <option>Mérida</option>
+          <option>Miranda</option>
+          <option>Monagas</option>
+          <option>Nueva Esparta</option>
+          <option>Portuguesa</option>
+          <option>Sucre</option>
+          <option>Táchira</option>
+          <option>Trujillo</option>
+          <option>Vargas</option>
+          <option>Yaracuy</option>
+          <option>Zulia</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Código Postal</label>
+        <input type="text" class="form-control" id="inputZip">
+      </div>
+    </div>
+
+    <div>
+        <h3 id= "infoContacto">INFORMACIÓN DE CONTACTO EXTRA</h3>
+    </div>
+
+    <div>
+        <form>
+            
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" >
+              </div>
+              <div class="form-group col-md-6">
+                <label for="phone">Teléfono</label>
+                <input type="text" class="form-control" id="phone" >
+              </div>
+            
+        </form>
+    </div>
+
+
+    <div class= "delipick">
+        <button routerLink="/pago" type="submit" ><img src="assets/img/payment.png" alt= "proceder al pago"></button>
+    </div>
+</form>
+
+
+
+

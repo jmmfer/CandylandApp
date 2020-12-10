@@ -1,0 +1,97 @@
+<div class="card">    
+    <form name="form" (ngSubmit)=" onSubmit(f)" #f="ngForm" novalidate>    
+        <div class="card-body pb-0">    
+            <div class="card">    
+                <div class="card-header main-search dash-search">    
+                    <h1 style="text-align: center; color: black;">    
+                        ADMINISTRACIÓN DE CATEGORIA
+                    </h1>    
+                </div>    
+            </div>    
+            <div class="row">    
+                <div class="col-12 col-md-12">    
+                    <div class="card">    
+                        <div *ngIf="!updateCategory" class="card-header" style="color: black;">    
+                            AGREGAR NUEVA CATEGORIA
+                            <h3 *ngIf="formSubmitted" style="text-align: center; color: green;">Categoria nueva agregada exitosamente...
+                              </h3>    
+                            <h3 *ngIf="isDelete" style="text-align: center; color: green;">Categoria ha sido eliminada exitosamente...</h3>    
+                        </div>    
+    
+                        <div *ngIf="updateCategory" class="card-header">    
+                            Actualizar Categoria  
+                            <h3 *ngIf="formSubmitted" style="text-align: center; color: green;">Categoria existente ha sido actualizada exitosamente...</h3>    
+                        </div>    
+    
+                        <div class="card-body">    
+                            <div class="center-form">    
+                                <div class="row">    
+                                    <div class="col-12 col-md-6">    
+                                        <div class="form-group">    
+                                            <label class="col-form-label">Nombre de Categoria<span    
+                                                    class="mandatoryFieldColor">*</span></label>    
+                                            <input type="text" class="form-control" name="CategoryName" autofocus  
+                                              
+                                                [(ngModel)]="Category.CategoryName" #category="ngModel"    
+                                                [ngClass]="{ 'is-invalid': f.submitted && category.invalid }" required />    
+                                            <div *ngIf="f.submitted && category.invalid" class="invalid-feedback">    
+                                                <div *ngIf="category.errors.required || category.pristine==false">Category   
+                                                    Name is required</div>    
+                                            </div>    
+                                        </div>    
+                                    </div>    
+                                   
+    
+                                    <div class="col-12 col-md-12">    
+                                        <div class="btn-group mb-3 mt-2 cmn-btn-grp">    
+                                            <button *ngIf="!updateCategory" type="submit" style="margin-left:1px"    
+                                                class="btn btn-success">Agregar    
+                                                Categoria</button>    
+                                            <button *ngIf="updateCategory" type="submit" style="margin-left:1px"    
+                                                class="btn btn-success">Actualizar    
+                                                Categoria</button>    
+                                        </div>    
+                                    </div>    
+                                </div>    
+                            </div>    
+                        </div>    
+                    </div>    
+                </div>    
+    
+                <div class="col-12 col-md-12">    
+                    <div class="card">    
+                        <div class="card-header" style="color: black; text-align: center;">Administrar Categorias</div>    
+                        <div class="card-body position-relative">    
+                            <div class="table-responsive cnstr-record product-tbl">    
+                                <table class="table table-bordered heading-hvr">    
+                                    <thead>    
+                                        <tr style="color: black;">    
+                                            <th class="active">Category Name</th>    
+       
+                                            <th width="60"> </th>    
+                                            <th width="60"> </th>    
+                                        </tr>    
+                                    </thead>    
+                                    <tbody>    
+                                        <tr *ngFor="let categoryList of categorys">    
+                                            <td>{{categoryList.CategoryName}}</td>    
+                                           
+                                            <td class="case-record">    
+                                                <button type="button" class="btn btn-info"    
+                                                    (click)="editCategory(categoryList.id)">Edit</button>    
+    
+                                            </td>    
+                                            <td> <button type="button" class="btn btn-danger"    
+                                                    (click)="deleteCategory(categoryList.id)">Delete</button></td>    
+                                        </tr>    
+                                    </tbody>    
+                                </table>    
+                            </div>    
+                        </div>    
+                    </div>    
+                </div>    
+    
+            </div>    
+        </div>    
+    </form>    
+</div>     

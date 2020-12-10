@@ -1,0 +1,19 @@
+.aqui{
+    text-align: center;
+    margin: 20px;
+}
+
+#gracias{
+    color: black;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#mensaje{
+    color: black;
+    text-align: center;
+}
+
+#bolsas{
+    width: 250px;
+}

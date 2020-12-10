@@ -1,0 +1,179 @@
+<div class="card">    
+  <form name="form" (ngSubmit)=" onSubmit(f)" #f="ngForm" novalidate>    
+      <div class="card-body pb-0">    
+          <div class="card">    
+              <div class="card-header main-search dash-search">    
+                  <h1 style="text-align: center; color: black;" >    
+                      ADMINISTRACIÓN DE PRODUCTOS  
+                  </h1>    
+              </div>    
+          </div>    
+          <div class="row">    
+              <div class="col-12 col-md-12">    
+                  <div class="card">    
+                      <div *ngIf="!updateProduct" class="card-header" style="color: black;">    
+                          AGREGAR NUEVO PRODUCTO  
+                          <h3 *ngIf="formSubmitted" style="text-align: center; color: green;">El producto nuevo ha sido agregado satisfactoriamente...</h3>    
+                          <h3 *ngIf="isDelete" style="text-align: center; color: green;">El producto ha sido eliminado satisfactoriamente...</h3>    
+                      </div>    
+  
+                      <div *ngIf="updateProduct" class="card-header">    
+                          Actualizar producto 
+                          <h3 *ngIf="formSubmitted" style="text-align: center; color: green;">Producto existente ha sido actualizado de forma exitosa...</h3>    
+                      </div>    
+  
+                      <div class="card-body">    
+                          <div class="center-form">    
+                              <div class="row">    
+                                  <div class="col-12 col-md-6">    
+                                      <div class="form-group">    
+                                          <label class="col-form-label">Nombre<span    
+                                                  class="mandatoryFieldColor">*</span></label>    
+                                          <input type="text" class="form-control" name="ProductName" autofocus    
+                                              [(ngModel)]="Product.ProductName" #product="ngModel"    
+                                              [ngClass]="{ 'is-invalid': f.submitted && product.invalid }" required />    
+                                          <div *ngIf="f.submitted && product.invalid" class="invalid-feedback">    
+                                              <div *ngIf="product.errors.required || product.pristine==false">Product   
+                                                  Name is required</div>    
+                                          </div>    
+                                      </div>    
+                                    
+                                  </div>
+                                  <div class="col-12 col-md-6">    
+                                    <div class="form-group">    
+                                        <label class="col-form-label">Categoria<span    
+                                                class="mandatoryFieldColor">*</span></label>    
+                                        <select type="text" class="form-control" name="CategoryName" autofocus [(ngModel)]="Product.CategoryName" #product="ngModel">
+                                                
+                                        <option *ngFor="let category of categorys" [value]="category.CategoryName" >{{category.CategoryName}}</option>
+                                        
+            
+                                        </select>   
+                                        <div *ngIf="f.submitted && product.invalid" class="invalid-feedback">    
+                                            <div *ngIf="product.errors.required || product.pristine==false">Product   
+                                                Category is required</div>    
+                                        </div>    
+                                    </div>    
+                                  
+                                </div>        
+                                <div class="col-12 col-md-6">    
+                                  <div class="form-group">    
+                                      <label class="col-form-label">Precio<span    
+                                              class="mandatoryFieldColor">*</span></label>    
+                                      <input type="text" class="form-control" name="ProductPrice" autofocus    
+                                          [(ngModel)]="Product.ProductPrice" #product="ngModel"    
+                                          [ngClass]="{ 'is-invalid': f.submitted && product.invalid }" required />    
+                                      <div *ngIf="f.submitted && product.invalid" class="invalid-feedback">    
+                                          <div *ngIf="product.errors.required || product.pristine==false">Product   
+                                              Price is required</div>    
+                                      </div>    
+                                  </div>    
+                                
+                              </div>
+                              <div class="col-12 col-md-6">    
+                                <div class="form-group">    
+                                    <label class="col-form-label">Descripción<span    
+                                            class="mandatoryFieldColor">*</span></label>    
+                                    <input type="text" class="form-control" name="ProductDescription" autofocus    
+                                        [(ngModel)]="Product.ProductDescription" #product="ngModel"    
+                                        [ngClass]="{ 'is-invalid': f.submitted && product.invalid }" required />    
+                                    <div *ngIf="f.submitted && product.invalid" class="invalid-feedback">    
+                                        <div *ngIf="product.errors.required || product.pristine==false">Product   
+                                            Description is required</div>    
+                                    </div>    
+                                </div>    
+                              
+                            </div>       
+                            <div class="col-12 col-md-6">    
+                              <div class="form-group">    
+                                  <label class="col-form-label">Cantidad<span    
+                                          class="mandatoryFieldColor">*</span></label>    
+                                  <input type="text" class="form-control" name="ProductCantidad" autofocus    
+                                      [(ngModel)]="Product.ProductCantidad" #product="ngModel"    
+                                      [ngClass]="{ 'is-invalid': f.submitted && product.invalid }" required />    
+                                  <div *ngIf="f.submitted && product.invalid" class="invalid-feedback">    
+                                      <div *ngIf="product.errors.required || product.pristine==false">Product   
+                                          Cantidad is required</div>    
+                                  </div>    
+                              </div>    
+                            
+                          </div>       
+                          <div class="form-group col-12">Imagen: 
+                            <input type="file"
+                                    id="file"
+                                    (change)="onFileSelected($event)"
+                                    name="image"
+                                    autocomplete="off"
+                                    />
+                                    </div>
+                           </div>
+
+
+  
+                                  <div class="col-12 col-md-12">    
+                                      <div class="btn-group mb-3 mt-2 cmn-btn-grp">    
+                                          <button *ngIf="!updateProduct" type="submit" style="margin-left:1px"    
+                                              class="btn btn-success">Agregar   
+                                              Producto</button>    
+                                          <button *ngIf="updateProduct" type="submit" style="margin-left:1px"    
+                                              class="btn btn-success">Editar   
+                                              Producto</button>    
+                                      </div>    
+                                  </div>    
+                              </div>    
+                          </div>    
+                      </div>    
+                  </div>    
+              </div>    
+  
+              <div class="col-12 col-md-12">    
+                  <div class="card">    
+                      <div class="card-header" style="color: black; text-align: center;">TABLA PRODUCTOS</div>    
+                      <div class="card-body position-relative">    
+                          <div class="table-responsive cnstr-record product-tbl">    
+                              <table class="table table-bordered heading-hvr">    
+                                  <thead >    
+                                      <tr style="color: black;">    
+                                          <th class="active">Nombre</th>    
+                                          <th >Categoria</th>     
+                                          <th>Precio</th>    
+                                          <th>Descripción</th> 
+                                          <th>Cantidad</th> 
+                                          <th>Imagen</th>   
+                                           
+                                          <th width="60"> </th>    
+                                          <th width="60"> </th>    
+                                      </tr>    
+                                  </thead>    
+                                  <tbody >    
+                                      <tr *ngFor="let productList of products">    
+                                          <td>{{productList.ProductName}}</td> 
+                                          <td>{{productList.CategoryName}}</td> 
+                                          <td>{{productList.ProductPrice}}</td> 
+                                          <td>{{productList.ProductDescription}}</td> 
+                                          <td>{{productList.ProductCantidad}}</td> 
+                                          <td><img id="fotomini" src={{productList.Image}}></td> 
+                                       
+                                        
+                                             
+                                             
+                                          
+                                          <td class="case-record">    
+                                              <button type="button" class="btn btn-info"    
+                                                  (click)="editProduct(productList.id)">Editar</button>    
+  
+                                          </td>    
+                                          <td> <button type="button" class="btn btn-danger"    
+                                                  (click)="deleteProduct(productList.id)">Borrar</button></td>    
+                                      </tr>    
+                                  </tbody>    
+                              </table>    
+                          </div>    
+                      </div>    
+                  </div>    
+              </div>    
+  
+          </div>    
+       
+  </form>    
+</div>   

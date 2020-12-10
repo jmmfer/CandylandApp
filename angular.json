@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ProyectoCandyland": {
+    "CandylandApp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ProyectoCandyland",
+            "outputPath": "dist/CandylandApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ProyectoCandyland:build"
+            "browserTarget": "CandylandApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ProyectoCandyland:build:production"
+              "browserTarget": "CandylandApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ProyectoCandyland:build"
+            "browserTarget": "CandylandApp:build"
           }
         },
         "test": {
@@ -110,15 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ProyectoCandyland:serve"
+            "devServerTarget": "CandylandApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ProyectoCandyland:serve:production"
+              "devServerTarget": "CandylandApp:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "ProyectoCandyland"
+    }
+  },
+  "defaultProject": "CandylandApp",
+  "cli": {
+    "analytics": false
+  }
 }

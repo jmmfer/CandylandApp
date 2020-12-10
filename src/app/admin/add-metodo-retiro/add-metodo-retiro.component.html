@@ -1,0 +1,95 @@
+<div class="card">    
+    <form name="form" (ngSubmit)=" onSubmit(f)" #f="ngForm" novalidate>    
+        <div class="card-body pb-0">    
+            <div class="card">    
+                <div class="card-header main-search dash-search">    
+                    <h1 style="text-align: center; color: black;" >    
+                        ADMINISTRACIÓN METODO DE RETIRO   
+                    </h1>    
+                </div>    
+            </div>    
+            <div class="row">    
+                <div class="col-12 col-md-12">    
+                    <div class="card">    
+                        <div *ngIf="!updateMetor" class="card-header" style="color: black;">    
+                            AGREGAR METODO DE RETIRO 
+                            <h3 *ngIf="formSubmitted" style="text-align: center; color: green;">Nuevo Metodo de retiro ha sido agregado existosamente... </h3>    
+                            <h3 *ngIf="isDelete" style="text-align: center; color: green;">Metodo de retiro ha sido eliminado exitosamente...
+                                </h3>    
+                        </div>    
+    
+                        <div *ngIf="updateMetor" class="card-header">    
+                            Actualizar Metodo de retiro
+                            <h3 *ngIf="formSubmitted" style="text-align: center; color: green;">Metodo de retiro existente ha sido actualizado satisfactoriamente...</h3>    
+                        </div>    
+    
+                        <div class="card-body">    
+                            <div class="center-form">    
+                                <div class="row">    
+                                    <div class="col-12 col-md-6">    
+                                        <div class="form-group">    
+                                            <label class="col-form-label">Tipo<span    
+                                                    class="mandatoryFieldColor">*</span></label>    
+                                            <input type="text" class="form-control" name="MetorTipo" autofocus    
+                                                [(ngModel)]="Metor.MetorTipo" #metor="ngModel"    
+                                                [ngClass]="{ 'is-invalid': f.submitted && metor.invalid }" required />    
+                                            <div *ngIf="f.submitted && metor.invalid" class="invalid-feedback">    
+                                                <div *ngIf="metor.errors.required || metor.pristine==false">Country    
+                                                    Tipo is required</div>    
+                                            </div>    
+                                        </div>    
+                                    </div>    
+                                    
+                                    <div class="col-12 col-md-12">    
+                                        <div class="btn-group mb-3 mt-2 cmn-btn-grp">    
+                                            <button *ngIf="!updateMetor" type="submit" style="margin-left:1px"    
+                                                class="btn btn-success">Agregar    
+                                                Metodo de retiro</button>    
+                                            <button *ngIf="updateMetor" type="submit" style="margin-left:1px"    
+                                                class="btn btn-success">Actualizar  
+                                                Metodo de retiro</button>    
+                                        </div>    
+                                    </div>    
+                                </div>    
+                            </div>    
+                        </div>    
+                    </div>    
+                </div>    
+    
+                <div class="col-12 col-md-12">    
+                    <div class="card">    
+                        <div class="card-header" style="color: black; text-align: center;">Administrar Metodo de retiro </div>    
+                        <div class="card-body position-relative">    
+                            <div class="table-responsive cnstr-record product-tbl">    
+                                <table class="table table-bordered heading-hvr">    
+                                    <thead>    
+                                        <tr style="color: black;">    
+                                            <th class="active">Tipo</th>    
+                                            
+                                            <th width="60"> </th>    
+                                            <th width="60"> </th>    
+                                        </tr>    
+                                    </thead>    
+                                    <tbody>    
+                                        <tr *ngFor="let metorList of metors">    
+                                            <td>{{metorList.MetorTipo}}</td>    
+                                      
+                                            <td class="case-record">    
+                                                <button type="button" class="btn btn-info"    
+                                                    (click)="editMetor(metorList.id)">Edit</button>    
+    
+                                            </td>    
+                                            <td> <button type="button" class="btn btn-danger"    
+                                                    (click)="deleteMetor(metorList.id)">Delete</button></td>    
+                                        </tr>    
+                                    </tbody>    
+                                </table>    
+                            </div>    
+                        </div>    
+                    </div>    
+                </div>    
+    
+            </div>    
+        </div>    
+    </form>    
+</div>     

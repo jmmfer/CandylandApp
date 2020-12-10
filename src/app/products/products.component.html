@@ -1,0 +1,70 @@
+
+<div class="md-form active-pink active-pink-2 mb-3 mt-0">
+
+  <input (input)="filtrar()" [(ngModel)]="filtro" class="form-control" type="text" placeholder="Buscar por nombre o categoria..." aria-label="Search">
+</div>
+
+
+
+
+<div class="cards">
+   
+<div  *ngFor="let productList of Product " style="width: 18rem;">
+    <div class="card col">
+    <img class="card-img-top" src={{productList.Image}} alt="Card image cap">
+    <div class="card-body">
+      <h3 class="card-title">{{ productList.ProductName }}</h3>
+      <h5 class="card-title">{{ productList.CategoryName }}</h5>
+      <h5 class="card-title">Precio 50g: {{ productList.ProductPrice }}</h5>
+
+
+      <button (click)="cargarModal(productList)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Comprar</button>
+      <button type="button" class="btn btn-light" *ngIf=isloggedin() (click)="addProduct(productList.id)"><i class="fas fa-heart"></i>  Favorito</button>
+
+      
+    </div>
+   </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: black;">{{productSelected?.ProductName}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <img class="card-img-top" src="{{productSelected?.Image}}" alt="Card image cap">
+            </div>
+            <div class="form-group">
+                <label for="recipient-name" class="col-form-label" style="color: black;">Categoria: {{productSelected?.CategoryName}}</label>
+
+            </div>
+            <div class="form-group">
+                <label for="recipient-name" class="col-form-label" style="color: black;">Precio: {{productSelected?.ProductPrice}} </label>
+
+            </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label" style="color: black;">Cantidad: </label>
+  
+            <input type="number" name="limonesusados" min="50"  step="50"  [(ngModel)]="cantidad">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label" style="color: black;">Descripcion: {{productSelected?.ProductDescription}}</label>
+          
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="insertarProducto()">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>

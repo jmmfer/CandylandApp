@@ -1,0 +1,217 @@
+<div class="card">    
+        <form name="form" (ngSubmit)=" onSubmit(f)" #f="ngForm" novalidate>    
+            <div class="card-body pb-0">    
+                <div class="card">    
+                    <div class="card-header main-search dash-search">    
+                        <h1 style="text-align: center; color: black;">    
+                            ADMINISTRACIÓN ÓRDENES
+                        </h1>    
+                    </div>    
+                </div>    
+                <div class="row">    
+                    <div class="col-12 col-md-12">    
+                        <div class="card">    
+                            <div *ngIf="!updateOrder" class="card-header">    
+                                   
+                                <h3 *ngIf="formSubmitted" style="text-align: center; color: green;">New Order has been    
+                                    added    
+                                    successfully...</h3>    
+                                <h3 *ngIf="isDelete" style="text-align: center; color: green;">Order has been deleted    
+                                    successfully...</h3>    
+                            </div>    
+        
+                            <div *ngIf="updateOrder" class="card-header" style="color: black;">    
+                                Actualizar Orden   
+                                <h3 *ngIf="formSubmitted" style="text-align: center; color: green;">Existing Order has    
+                                    been updated    
+                                    successfully...</h3>    
+                            </div>    
+        
+                            <div class="card-body">    
+                                <div class="center-form">    
+                                    <div class="row">    
+                                        <div class="col-12 col-md-6">    
+                                            <div class="form-group">    
+                                                <label class="col-form-label">Email<span    
+                                                        class="mandatoryFieldColor">*</span></label>    
+                                                <input type="text" class="form-control" name="Email" autofocus    
+                                                    [(ngModel)]="Order.Email"     
+                                                    required />    
+                                               
+                                            </div>    
+                                        </div>    
+                                        <div class="col-12 col-md-6">    
+                                            <div class="form-group">    
+                                                <label class="col-form-label">Phone<span    
+                                                        class="mandatoryFieldColor">*</span></label>    
+                                                <input type="text" class="form-control" name="Phone"    
+                                                    [(ngModel)]="Order.Phone" #phone="ngModel"    
+                                                    [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }"    
+                                                    required />    
+                                                <div *ngIf="f.submitted && phone.invalid"    
+                                                    class="invalid-feedback">    
+                                                    <div    
+                                                        *ngIf="phone.errors.required || phone.pristine==false">    
+                                                        Order Phone   
+                                                        Name is required</div>    
+                                                </div>    
+                                            </div>    
+                                        </div>    
+                                        <div class="col-12 col-md-6">    
+                                                <div class="form-group">    
+                                                    <label class="col-form-label">User ID<span    
+                                                            class="mandatoryFieldColor">*</span></label>    
+                                                    <input type="text" class="form-control" name="userId"    
+                                                        [(ngModel)]="Order.UserId" #UserId="ngModel"    
+                                                        [ngClass]="{ 'is-invalid': f.submitted && UserId.invalid }"    
+                                                        required />    
+                                                    <div *ngIf="f.submitted && UserId.invalid"    
+                                                        class="invalid-feedback">    
+                                                        <div    
+                                                            *ngIf="UserId.errors.required || UserId.pristine==false">    
+                                                            User ID   
+                                                            is required</div>    
+                                                    </div>    
+                                                </div>    
+                                            </div>    
+        
+                                        <div class="col-12 col-md-6">    
+                                            <div class="form-group">    
+                                                <label class="col-form-label">Direccion:<span    
+                                                        class="mandatoryFieldColor">*</span></label>    
+                                                <input type="text" class="form-control" name="Direccion"    
+                                                    [(ngModel)]="Order.Direccion" #direccion="ngModel"    
+                                                    [ngClass]="{ 'is-invalid': f.submitted && direccion.invalid }"    
+                                                    required />    
+                                                <div *ngIf="f.submitted && direccion.invalid" class="invalid-feedback">    
+                                                    <div    
+                                                        *ngIf="direccion.errors.required || direccion.pristine==false">    
+                                                        Currency Name is    
+                                                        required</div>    
+                                                </div>    
+                                            </div>    
+                                        </div>    
+                                        <div class="col-12 col-md-6">    
+                                            <div class="form-group">    
+                                                <label class="col-form-label">Bolsas<span    
+                                                        class="mandatoryFieldColor">*</span></label>    
+                                                <input type="text" class="form-control" name="Bolsas"    
+                                                    [(ngModel)]="Order.Bolsas" #bolsas="ngModel"    
+                                                    [ngClass]="{ 'is-invalid': f.submitted && bolsas.invalid }"    
+                                                    required />    
+                                                <div *ngIf="f.submitted && bolsas.invalid"    
+                                                    class="invalid-feedback">    
+                                                    <div    
+                                                        *ngIf="bolas.errors.required || bolsas.pristine==false">    
+                                                        </div>    
+                                                </div>    
+                                            </div>    
+                                        </div>    
+                                        
+                                        <div class="col-12 col-md-6">    
+                                                <div class="form-group">    
+                                                    <label class="col-form-label">Metodo de pago<span    
+                                                            class="mandatoryFieldColor">*</span></label>    
+                                                    <select type="text" class="form-control" name="MetodoPago" autofocus [(ngModel)]="Order.MetodoPago" >
+                                                            
+                                                    <option *ngFor="let x of metops" [value]="x.TipoMetodoPago" >{{x.TipoMetodoPago}}</option>
+                                                    
+                        
+                                                    </select>   
+                                                    
+                                                </div>    
+                                              
+                                            </div>       
+                                            
+                                            <div class="col-12 col-md-6">    
+                                                    <div class="form-group">    
+                                                        <label class="col-form-label">Metodo de retiro<span    
+                                                                class="mandatoryFieldColor">*</span></label>    
+                                                        <select type="text" class="form-control" name="MetodoRetiro" autofocus [(ngModel)]="Order.MetodoRetiro" >
+                                                                
+                                                        <option *ngFor="let x of metors" [value]="x.MetorTipo" >{{x.MetorTipo}}</option>
+                                                        
+                            
+                                                        </select>   
+                                                        
+                                                    </div>    
+                                                  
+                                                </div>      
+                                                <div class="col-12 col-md-6">    
+                                                    <div class="form-group">    
+                                                        <label class="col-form-label">Estatus:<span    
+                                                                class="mandatoryFieldColor">*</span></label>    
+                                                        <input type="text" class="form-control" name="Estatus"    
+                                                            [(ngModel)]="Order.Estatus"  
+                                                               
+                                                            required />    
+                                                       
+                                                    </div>    
+                                                </div>    
+                 
+        
+                                        <div class="col-12 col-md-12">    
+                                            <div class="btn-group mb-3 mt-2 cmn-btn-grp">    
+                                                <button *ngIf="!updateOrder" type="submit" style="margin-left:1px"    
+                                                    class="btn btn-success">Add    
+                                                    Order</button>    
+                                                <button *ngIf="updateOrder" type="submit" style="margin-left:1px"    
+                                                    class="btn btn-success">Update    
+                                                    Order</button>    
+                                            </div>    
+                                        </div>    
+                                    </div>    
+                                </div>    
+                            </div>    
+                        </div>    
+                    </div>    
+        
+                    <div class="col-12 col-md-12">    
+                        <div class="card">    
+                            <div class="card-header" style="color: black; text-align: center;">ADMINISTRAR ORDEN</div>    
+                            <div class="card-body position-relative">    
+                                <div class="table-responsive cnstr-record product-tbl">    
+                                    <table class="table table-bordered heading-hvr">    
+                                        <thead>    
+                                            <tr style="color: black;">    
+                                                <th >Email</th>    
+                                                <th>Phone</th>    
+                                                <th>UserId</th>    
+                                                <th>Direccion</th>   
+                                                <th>Bolsas</th>    
+                                                <th>MetodoPago</th>     
+                                                <th>MetodoRetiro</th>    
+                                                <th>Estatus</th>   
+                                                <th width="60"> </th>    
+                                                <th width="60"> </th>    
+                                            </tr>    
+                                        </thead>    
+                                        <tbody>    
+                                            <tr *ngFor="let OrderList of orders">    
+                                                <td>{{OrderList.Email}}</td>    
+                                                <td>{{OrderList.Phone}}</td>    
+                                                <td>{{OrderList.UserId}}</td>    
+                                                <td>{{OrderList.Direccion}}</td>    
+                                                <td>{{OrderList.Bolsas}}</td>   
+                                                <td>{{OrderList.MetodoPago}}</td> 
+                                                <td>{{OrderList.MetodoRetiro}}</td> 
+                                                <td>{{OrderList.Estatus}}</td> 
+                                                <td class="case-record">    
+                                                    <button type="button" class="btn btn-info"    
+                                                        (click)="editOrder(OrderList.id)">Edit</button>    
+        
+                                                </td>    
+                                                <td> <button type="button" class="btn btn-danger"    
+                                                        (click)="deleteOrder(OrderList.id)">Delete</button></td>    
+                                            </tr>    
+                                        </tbody>    
+                                    </table>    
+                                </div>    
+                            </div>    
+                        </div>    
+                    </div>    
+        
+                </div>    
+            </div>    
+        </form>    
+    </div>     

@@ -1,1 +1,206 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: rgb(255, 255, 255);
+    color: turquoise;
+    background-color: #fdfdfd;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.13'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+  
+}
+a{
+    color: turquoise;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.container{
+    
+    width: 100%;
+    margin: auto;
+    padding-left: 6em;
+   
+}
+/* NAVIGATION */
+.sidebar{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: turquoise;
+    height: 308.5%;
+    padding: 150PX;
+    /*transform: translateX(-450px);*/
+    transition: transform 0.5s ease-in-out;
+    opacity: 0.9;
+  
+}
+.sidebar.show{
+    transform: translateX(-20px);
+}
+.sidebar a{
+    
+  
+  
+  
+   font-size: 26px;
+   color: #fdfdfd;
+   display: flex;
+   flex-direction: column;
+   padding: 40px 0px;
+   position: relative;
+   left: -80px;
+   top: -20px;
+  
+}
+
+.sidebar i {
+   
+    display: flex;
+    position: relative;
+    font-size: 60px;
+    right: -250px;
+    top: -50px;
+
+
+}
+.iconos-izquierdos-sup i {
+    display: flex;
+    position: relative;
+    font-size: 80px;
+    right: -30px;
+    top: 20px;
+
+  
+}
+.iconos-izquierdos-sup p {
+    display: flex;
+    position: relative;
+    font-size: 80px;
+    right: -200px;
+    top: 40px;
+
+  
+}
+
+.nav-main{
+    font-size: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    padding: 55px 0px;
+    background:#FF5850;
+}
+
+.nav-brand{
+    width: 130px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px !important; 
+    display: block;
+   
+    
+    
+}
+
+/* NAVIGATION left */
+
+.nav-main ul {
+    display: flex;
+}
+
+.nav-main ul li {
+    padding: 69px;
+    text-decoration: none;
+  
+    
+}
+
+
+.nav-main ul.nav-menu {
+    flex: 1;
+    margin-left: 20px;
+   
+   
+}
+
+.menu-btn{
+    color: #FF5850;
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    left: 40px;
+    z-index: 2;
+    font-size: 4.5rem;
+}
+.menu-btn p{
+    font-size: 30px;
+    position: absolute;
+    right: -270px;
+    bottom: 24px;
+    
+
+}
+/* NAVIGATION right */
+.nav-main ul.nav-menu-right i{
+    font-size: 40px;
+    padding: 13px;
+    margin: 2.5rem;
+  
+
+ 
+   
+}
+
+
+/* social */
+.social{
+    background: #FF5850;
+    height: 100px;
+}
+.social p {
+    text-align: center;
+    font-size: 17px;
+   
+   
+ 
+
+}
+.links{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+    
+    
+}
+
+.links a{
+    margin: 0px 30px;
+  
+}
+.links i{
+    font-size: 3rem;
+   
+}
+.footer{
+  
+    background: #FF5850;
+    padding: 20px 0px;
+    text-align: center;
+    padding-bottom: 20px;
+    position: relative;
+    right: -1.5em;
+   
+}
+

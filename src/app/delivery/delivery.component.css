@@ -1,0 +1,37 @@
+.delipick {
+    margin: 15px;
+    text-align: center;
+    height: 70px;
+    width:200px; 
+    overflow:hidden; 
+    /* margin-top: 15px; */
+    margin-right:-5px;
+    display:inline-block; 
+    
+   
+}
+
+.delipick img {
+    width: 200px;
+    height: 200px;
+    margin: -65px 0 0; 
+    
+}
+
+#pickup{
+    filter: opacity(30%);
+}
+
+
+
+#infoContacto {
+    color: black;
+    font-weight: bold;
+}
+
+
+
+#proceder {
+    text-align: center;
+    margin: 15px;
+}

@@ -1,0 +1,17 @@
+.btn-white {
+    border-radius: 50px;
+    color: #FF5850;
+    background-color: #fff;
+    padding: 8px 40px;
+    cursor: pointer;
+    border: 2px solid #FF5850!important
+}
+
+.btn-white:hover {
+    color: #fff;
+    background-image: linear-gradient(to right, #FFD54F, #D500F9)
+}
+.container{
+    position: relative;
+    right: 4em;
+}

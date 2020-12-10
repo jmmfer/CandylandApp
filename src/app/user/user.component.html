@@ -1,0 +1,86 @@
+<div class="card">    
+        <form name="form" (ngSubmit)=" onSubmit(f)" #f="ngForm" novalidate>    
+            <div class="card-body pb-0">    
+                <div class="card">    
+                    <div class="card-header main-search dash-search">    
+                        <h1 style="text-align: center; color: black;">    
+                            ADMINISTRACIÓN DE USUARIOS
+                        </h1>    
+                    </div>    
+                </div>    
+                <div class="row">    
+                    <div class="col-12 col-md-12">    
+                        <div class="card">    
+                       
+                            <div *ngIf="updateUsuario" class="card-header">    
+                                Actualizar Usuario  
+                                <h3 *ngIf="formSubmitted" style="text-align: center; color: green;">Existing Usuario has    
+                                    been updated    
+                                    successfully...</h3>    
+                            </div>    
+        
+                            <div class="card-body">    
+                                <div class="center-form">    
+                                    <div class="row">    
+                                       
+                                       
+                                             
+                                       
+                                            
+                                        <div class="col-12 col-md-12">    
+                                            <div class="btn-group mb-3 mt-2 cmn-btn-grp">    
+                                                
+                                                <button *ngIf="updateUsuario" type="submit" style="margin-left:1px"    
+                                                    class="btn btn-success">Update    
+                                                    Usuario</button>    
+                                            </div>    
+                                        </div>    
+                                    </div>    
+                                </div>    
+                            </div>    
+                        </div>    
+                    </div>    
+        
+                    <div class="col-12 col-md-12">    
+                        <div class="card">    
+                            <div class="card-header" style="color: black;">Lista de Usuarios</div>    
+                            <div class="card-body position-relative">    
+                                <div class="table-responsive cnstr-record product-tbl">    
+                                    <table class="table table-bordered heading-hvr">    
+                                        <thead>    
+                                            <tr style="color: black;">    
+                                                    <th class="active">Nombre</th>    
+                                                    <th class="active">Numero</th>  
+                                                    <th class="active">Correo</th>  
+                                                
+                                                <th width="60"> </th>    
+                                                <th width="60"> </th>    
+                                            </tr>    
+                                        </thead>    
+                                        <tbody>    
+                                            <tr *ngFor="let usuarioList of usuarios">    
+                                                    <td>{{usuarioList.fullName}}</td>    
+                                                    <td>{{usuarioList.phone}}</td>   
+                                                    <td>{{usuarioList.email}}</td>   
+                                                   
+                                                <td class="case-record">    
+                                                    <button type="button" class="btn btn-info"    
+                                                        (click)="editUsuario(usuarioList.id)">Edit</button>    
+        
+                                                </td>    
+                                                <td> <button type="button" class="btn btn-danger"    
+                                                        (click)="deleteUsuario(usuarioList.id)">Delete</button></td>    
+                                            </tr>    
+                                        </tbody>    
+                                    </table>    
+                                </div>    
+                            </div>    
+                        </div>    
+                    </div>    
+        
+                </div>    
+            </div>    
+        </form>    
+    </div>     
+  
+  
