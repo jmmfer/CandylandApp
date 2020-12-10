@@ -18,7 +18,7 @@ import { Usuario } from './user/usuario'
 
 
 export class AppComponent {
-  title = 'CandylandApp';
+  title = 'ProyectoCandyland';
   carrito: Carrito = new Carrito;
   //const PESO_MAX = 2000;
 
